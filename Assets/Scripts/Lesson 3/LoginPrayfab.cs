@@ -3,11 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
+using System;
 
 internal class LoginPrayfab : MonoBehaviour
 {
     [SerializeField] private Button _logInButton;
     [SerializeField] private TMP_Text _labelStatus;
+    private const string AUTH_GUID_KEY = "auth_guid_key";
 
     private void Start()
     {
@@ -16,12 +18,20 @@ internal class LoginPrayfab : MonoBehaviour
 
     private void LogIn()
     {
+        var needCreation = PlayerPrefs.HasKey(AUTH_GUID_KEY);
+        var uniqueID = PlayerPrefs.GetString(AUTH_GUID_KEY, Guid.NewGuid().ToString());
         LoginWithCustomIDRequest request = new LoginWithCustomIDRequest
         {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true
+            CustomId = uniqueID,
+            CreateAccount = !needCreation
         };
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
+        PlayFabClientAPI.LoginWithCustomID(request, 
+            result =>
+            {
+                PlayerPrefs.SetString(AUTH_GUID_KEY, uniqueID);
+                OnLoginSuccess(result);
+            },
+            OnLoginFailure);
     }
 
     private void OnLoginSuccess(LoginResult result)
