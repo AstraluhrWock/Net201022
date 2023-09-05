@@ -1,0 +1,112 @@
+{
+  "CatalogVersion": "Main",
+  "Catalog": [
+    {
+      "ItemId": "Weapon_type_1",
+      "ItemClass": "Weapons",
+      "CatalogVersion": "Main",
+      "DisplayName": "Wooden cudgel",
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 950
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "\"weapons",
+        "start-weapon\""
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "Weapon_type_2",
+      "ItemClass": "Weapons",
+      "CatalogVersion": "Main",
+      "DisplayName": "Wooden sword",
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 850
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "\"weapons",
+        "sword\""
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "Weapon_type_3",
+      "ItemClass": "Weapons",
+      "CatalogVersion": "Main",
+      "DisplayName": "Bronze sword",
+      "Description": null,
+      "VirtualCurrencyPrices": {
+        "SC": 1000
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "\"weapons",
+        "sword\""
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    }
+  ],
+  "DropTables": [
+    {
+      "TableId": "table_id",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "Weapon_type_1",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "Weapon_type_2",
+          "Weight": 1
+        }
+      ]
+    }
+  ]
+}
