@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 internal class DisconnectPhoton : MonoBehaviour
 {
-    [SerializeField] private Button _disconnectPhoton;
+    [SerializeField] private Button _disconnectButton;
 
     private void Start()
     {
-        _disconnectPhoton.onClick.AddListener(()=> Disconnect());
+        _disconnectButton.onClick.AddListener(()=> Disconnect());
     }
 
     private void Disconnect()
@@ -16,7 +16,7 @@ internal class DisconnectPhoton : MonoBehaviour
         if (PhotonNetwork.IsConnected)
         {
             PhotonNetwork.Disconnect();
-            Debug.Log("Dissconnected from Photon");
+            Debug.Log("Disconnected from Photon");
         }
         else 
         {
