@@ -15,7 +15,7 @@ internal class CreateAccountWindow : AccountDataWindowBase
         base.SubscriptionsElementsUI();
 
         _emailField.onValueChanged.AddListener(UpdateEmail);
-        _createAccountButton.onClick.AddListener(CreateAccount);
+        _createAccountButton.onClick.AddListener(()=>CreateAccount());
     }
 
     private void UpdateEmail(string email)
