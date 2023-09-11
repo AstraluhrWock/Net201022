@@ -12,8 +12,8 @@ internal class EnterGameWindow : MonoBehaviour
 
     private void Start()
     {
-        _signInButton.onClick.AddListener(OpenSignInWindow);
-        _createAccountButton.onClick.AddListener(CreateAccountWindow);
+        _signInButton.onClick.AddListener(()=>OpenSignInWindow());
+        _createAccountButton.onClick.AddListener(()=>CreateAccountWindow());
     }
 
     private void OpenSignInWindow()
