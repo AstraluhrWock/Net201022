@@ -14,7 +14,6 @@ internal class PlayfabAccountManager : MonoBehaviour
     {
         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(), OnGetAccount, OnError);
         PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalog, OnError);
-        //PlayFabServerAPI.GetRandomResultTables(new PlayFab.ServerModels.GetRandomResultTablesRequest(), OnGetTable, OnError);
     }
 
     private void OnGetAccount(GetAccountInfoResult result)
@@ -42,10 +41,5 @@ internal class PlayfabAccountManager : MonoBehaviour
         {
             Debug.Log(item.ItemId);
         }
-    }
-
-    private void OnGetTable(PlayFab.ServerModels.GetRandomResultTablesResult result)
-    {
-        
     }
 }
