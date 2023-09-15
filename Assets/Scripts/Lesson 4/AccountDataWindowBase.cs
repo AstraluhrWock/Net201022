@@ -23,7 +23,7 @@ internal class AccountDataWindowBase : MonoBehaviour
 
     protected void LoadGameScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     private void UpdateUsername(string username)
