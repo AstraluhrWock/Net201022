@@ -11,6 +11,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Realtime;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Photon.Pun.Demo.PunBasics
 {
@@ -36,8 +38,8 @@ namespace Photon.Pun.Demo.PunBasics
 		private GameObject instance;
 
 		[Tooltip("The prefab to use for representing the player")]
-		[SerializeField]
-		private GameObject playerPrefab;
+		[SerializeField] private GameObject playerPrefab;
+		[SerializeField] private Button _quitButton;
 
 		#endregion
 
@@ -46,10 +48,11 @@ namespace Photon.Pun.Demo.PunBasics
 		void Start()
 		{
 			Instance = this;
+			_quitButton.onClick.AddListener(QuitApplication);
 
 			if (!PhotonNetwork.IsConnected)
 			{
-				SceneManager.LoadScene(0);
+				SceneManager.LoadScene(2);
 				return;
 			}
 
@@ -64,7 +67,6 @@ namespace Photon.Pun.Demo.PunBasics
 				if (PlayerManager.LocalPlayerInstance == null)
 				{
 					Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-
 					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
 				}
 				else
@@ -107,7 +109,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 		public override void OnLeftRoom()
 		{
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(2);
 		}
 
 		#endregion
